@@ -3,24 +3,23 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../redux/store';
 import { removeTodo, toggleComplete } from '../redux/todoSlice';
-import { FaCheck, FaTimes } from 'react-icons/fa'; // Importe o ícone de "Check" e o ícone de "X"
-import './TodoList.css'; // Importe o arquivo de estilo
-
+import { FaCheck, FaTimes } from 'react-icons/fa'; // Importando os ícones "Check" e "X" da biblioteca react-icons
+import './TodoList.css'; // Importando o arquivo de estilo
 
 const TodoList: React.FC = () => {
-  const todos = useSelector((state: RootState) => state.todos);
-  const dispatch = useDispatch();
+  const todos = useSelector((state: RootState) => state.todos); // Obtendo as tarefas do estado usando o useSelector do react-redux
+  const dispatch = useDispatch(); // Obtendo o dispatcher do react-redux para despachar as actions
 
   const handleToggleComplete = (id: number) => {
-    dispatch(toggleComplete(id));
+    dispatch(toggleComplete(id)); // Disparando a action toggleComplete para marcar ou desmarcar a tarefa como concluída
   };
 
   const handleRemoveTodo = (id: number) => {
-    dispatch(removeTodo(id));
+    dispatch(removeTodo(id)); // Disparando a action removeTodo para remover a tarefa da lista
   };
 
   return (
-    <div className="todo-list-container"> {/* Novo elemento div para centralizar a tabela */}
+    <div className="todo-list-container"> {/* Nova div para centralizar a tabela */}
       <table>
         <thead>
           <tr>
@@ -37,6 +36,7 @@ const TodoList: React.FC = () => {
                   {todo.completed ? (
                     <FaCheck className="completed-icon" onClick={() => handleToggleComplete(todo.id)} />
                   ) : (
+                    // Ícone de "Check" vazio como marcador para quando a tarefa ainda não foi concluída
                     <span className="check-icon-placeholder" onClick={() => handleToggleComplete(todo.id)}></span>
                   )}
 
@@ -56,8 +56,10 @@ const TodoList: React.FC = () => {
               <td className="actions">
                 {/* Ícone de "Concluir" (Check) */}
                 {todo.completed ? (
+                  // Ícone de "Check" vazio como marcador para quando a tarefa já foi concluída
                   <span className="check-icon-placeholder"></span>
                 ) : (
+                  // Ícone de "Check" verde para marcar a tarefa como concluída
                   <FaCheck className="check-icon" onClick={() => handleToggleComplete(todo.id)} />
                 )}
 
@@ -72,4 +74,4 @@ const TodoList: React.FC = () => {
   );
 };
 
-export default TodoList;
+export default TodoList; // Exportando o componente TodoList
