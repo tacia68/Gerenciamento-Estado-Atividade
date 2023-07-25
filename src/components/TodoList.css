@@ -1,0 +1,54 @@
+/* src/components/TodoList.css */
+
+/* Estilo do ícone de "Concluir" (Check) */
+.conclude-icon {
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+    background-color: green; /* Cor de fundo verde */
+    border-radius: 50%; /* Deixa o ícone redondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Cor do ícone branco */
+    cursor: pointer;
+  }
+
+/* Estilo da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Estilo das células da tabela */
+  td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Estilo das células de cabeçalho da tabela */
+  th {
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #f2f2f2; /* Cor de fundo cinza para as células de cabeçalho */
+  }
+  
+  /* Estilo das linhas da tabela (exceto cabeçalho) */
+  tr:not(:first-child) {
+    background-color: #fff; /* Cor de fundo branco para as linhas da tabela (exceto cabeçalho) */
+  }
+  
+  /* Estilo das células de ações (ícones) */
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  /* Estilo para centralizar a tabela */
+  .todo-list-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Espaçamento superior para a tabela ficar centralizada na página */
+  }
+  
