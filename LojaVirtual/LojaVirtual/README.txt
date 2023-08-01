@@ -11,7 +11,7 @@ Adicionar ao carrinho: Os usuários podem adicionar produtos ao carrinho de comp
 
 #Execução do Projeto
 
-No repositorio: https://github.com/tacia68/React-Atividade
+No repositorio: https://github.com/tacia68/Gerenciamento-Estado-Atividade/tree/main/LojaVirtual
 devererá acessar a pasta
 cd LojaVirtual
 
